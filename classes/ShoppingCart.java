@@ -8,6 +8,9 @@ public class ShoppingCart {
     ArrayList<String> items = new ArrayList<String>();
 
     public void addItem (String listOfItems){
+        
+        listOfItems = listOfItems.replace(",", " ");
+        
         Scanner scan = new Scanner(listOfItems.substring(4));
             while (scan.hasNext()){
                 String item = scan.next();
