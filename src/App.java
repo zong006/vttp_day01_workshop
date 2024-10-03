@@ -9,6 +9,7 @@ public class App {
         ShoppingCart cart = new ShoppingCart();
         userInput(cart);
     }
+    
 private static void menu(){
 
     System.out.println("\n");
@@ -31,6 +32,7 @@ public static void userInput(ShoppingCart cart){
     while(!input.equals("quit")){
 
         input = console.readLine(">>> ");
+        input = input.toLowerCase();
 
         if (input.equals("list")){
             cart.listItems();
