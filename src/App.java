@@ -1,4 +1,6 @@
 import java.io.Console;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import classes.ShoppingCart;
 
@@ -27,28 +29,46 @@ public static void userInput(ShoppingCart cart){
     System.out.println("A function to add unique items to your shopping cart.");
     menu();
     Console console = System.console();
+    String condition = "unquit";
     String input = "";
+    ArrayList<String> inputStrings = new ArrayList<String>();
 
-    while(!input.equals("quit")){
+    while(!condition.equals("quit")){
 
         input = console.readLine(">>> ");
-        input = input.toLowerCase();
+        inputStrings.clear();        
 
-        if (input.equals("list")){
-            cart.listItems();
+        Scanner scan = new Scanner(input);
+        while (scan.hasNext() && inputStrings.size()<1){
+            inputStrings.add(scan.next());
         }
-        else if (input.contains("add")){
-            cart.addItem(input);
-        }
-        else if (input.contains("remove")){
-            cart.removeItem(input);
-        }
-        else if (input.equals("quit")){
-            continue;
+        
+        if (inputStrings.size()>0){
+            String action = inputStrings.get(0).toLowerCase();
+            // System.out.println(action);
+            // System.out.println(inputStrings.size());
+
+            if (action.equals("list")){
+                cart.listItems();
+            }
+            else if (action.equals("add")){
+                cart.addItem(input);
+            }
+            else if (action.equals("remove")){
+                cart.removeItem(input);
+            }
+            else if (action.equals("quit")){
+                condition = "quit";
+                continue;
+            }
+            else {
+                System.out.println("Invalid input. Try again.");
+            }
+
         }
         else {
-            System.out.println("Invalid input. Try again.");
-        }
+            continue;
+        }        
     }
 }
 
