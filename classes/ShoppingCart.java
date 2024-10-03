@@ -41,7 +41,7 @@ public class ShoppingCart {
                 }
             }
             else{
-                System.out.printf("Item number %d does not exist. \nThere are only %d items in the cart. \n", itemNumber, items.size());
+                System.out.printf("Item number %d does not exist. \nThere are %d items in the cart. \n", itemNumber, items.size());
             }
 
         }        

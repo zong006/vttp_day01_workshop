@@ -17,7 +17,7 @@ private static void menu(){
     System.out.println("\n");
     System.out.println("enter either of the following after the prompt '>>>' ");
     System.out.println("'add XXX YYY ZZZ' to add items XXX, YYY and ZZZ to the cart. Eg. add apple banana");
-    System.out.println("'remove x y z' to remove items number x, y and z from the list. Eg. remove 1 3 4");
+    System.out.println("'remove x' to remove item number x from the list. Eg. remove 1");
     System.out.println("'list' to list down the items in the cart. ");
     System.out.println("'quit' to exit.");
     System.out.println("\n");
