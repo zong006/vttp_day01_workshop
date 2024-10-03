@@ -18,9 +18,7 @@ private static void menu(){
     System.out.println("'list' to list down the items in the cart. ");
     System.out.println("'quit' to exit.");
     System.out.println("\n");
-
 }
-
 
 public static void userInput(ShoppingCart cart){
 
@@ -31,7 +29,7 @@ public static void userInput(ShoppingCart cart){
     String input = "";
 
     while(!input.equals("quit")){
-        
+
         input = console.readLine(">>> ");
 
         if (input.equals("list")){
@@ -42,6 +40,9 @@ public static void userInput(ShoppingCart cart){
         }
         else if (input.contains("remove")){
             cart.removeItem(input);
+        }
+        else if (input.equals("quit")){
+            continue;
         }
         else {
             System.out.println("Invalid input. Try again.");
